@@ -1,0 +1,8 @@
+{
+  "key.shulkerpull.toggle": "Ligar/desligar Shulker Pull",
+  "key.category.shulkerpull.main": "Shulker Pull",
+  "shulkerpull.message.on": "Shulker Pull: LIGADO",
+  "shulkerpull.message.off": "Shulker Pull: DESLIGADO",
+  "shulkerpull.hud.on": "Shulker Pull: LIGADO",
+  "shulkerpull.hud.no_server": "Shulker Pull: sem mod no servidor"
+}

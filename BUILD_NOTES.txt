@@ -1,0 +1,35 @@
+Shulker Pull 0.3.0 - add-on for BuildPrint (NeoForge 26.3)
+
+What it does
+  When BuildPrint still needs a block near you and a shulker box in your inventory contains it,
+  the block is moved out of the shulker (or out of a bundle inside the shulker) into your inventory.
+  - At most ONE stack of each material, and never more than the build still needs
+    (needs 5 glass, you have 40 in the box: only 5 are taken).
+  - The rest stays in the shulker. When the stack in your inventory drops below half, it is
+    topped up again.
+  - A green "Shulker Pull: ON" badge is shown next to the hotbar and over the inventory screens.
+  - Items are only MOVED, never created. The server counts the item before and after every
+    transfer and rolls everything back if the numbers differ.
+
+Toggle
+  It is OFF by default every time you start the game. Press backslash (\) in game to switch it on/off. A message shows above the hotbar.
+  Change the key under Options > Controls > Shulker Pull.
+
+Install
+  Put shulkerpull-0.3.0.jar in the mods folder of BOTH your game and your server
+  (BisectHosting: Files > mods). The server part is what actually moves the items.
+  Without it on the server the add-on does nothing (it will not stop you joining).
+
+Notes
+  - Only uses BuildPrint's public API (com.buildprint.api). No BuildPrint code is included.
+  - Needs a free inventory slot (or a stack with room), otherwise it waits.
+  - Written against NeoForge 26.3.0.95 and BuildPrint 0.1.38; compile-checked, not run in-game.
+
+Rebuild (Windows PowerShell, from this folder, JDK 21+ installed)
+  $libs = (Get-ChildItem C:\Games\Minecraft\Install\libraries -Recurse -Filter *.jar | % FullName) -join ';'
+  $bp = "<path to your buildprint-neoforge jar>"
+  javac -proc:none --release 21 -cp "$libs;$bp" -d out (Get-ChildItem src -Recurse -Filter *.java | % FullName)
+  Copy-Item src\main\resources\META-INF out\ -Recurse
+  jar --create --file shulkerpull-0.3.0.jar -C out .
+  (Dist stub note: if javac says net.neoforged.api.distmarker.Dist is missing, add the neoforge jars from
+   libraries\net\neoforged\neoforge\<version> to the classpath.)

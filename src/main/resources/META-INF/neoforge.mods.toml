@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "shulkerpull"
+version = "0.3.0"
+displayName = "Shulker Pull - BuildPrint Addon"
+description = '''
+Add-on for BuildPrint (the schematic / printer mod). It makes easy place and the printer work straight from the shulker boxes in your inventory.
+
+When BuildPrint still needs a block near you and that block is inside a shulker box (or a bundle inside one), Shulker Pull moves it into your inventory for you. It takes at most one stack of each material and never more than the build still needs, and tops the stack up as you use it. The rest stays in the box.
+
+Items are only moved, never created: the server checks the totals after every transfer and undoes it if anything does not add up.
+
+A small badge next to the hotbar shows when it is on. Toggle it with the key under Options > Controls > Shulker Pull (default: backslash). It starts switched off each time you launch the game, so press the key to turn it on.
+
+Needs BuildPrint. Install it on both the client and the server; without it on the server it simply does nothing.
+'''
+logoFile = "assets/shulkerpull/icon.png"
+iconFile = "assets/shulkerpull/icon.png"
+authors = "Joel"
+
+[[dependencies.shulkerpull]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.3,26.4)"
+side = "BOTH"
+
+[[dependencies.shulkerpull]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.3,26.4)"
+side = "BOTH"
+
+[[dependencies.shulkerpull]]
+modId = "buildprint"
+type = "optional"
+versionRange = "[0.1.17,)"
+side = "CLIENT"
