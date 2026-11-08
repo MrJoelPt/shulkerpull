@@ -17,7 +17,7 @@ Install on both the client and the server. Without it on the server it does noth
 
 It only uses BuildPrint's public API (`com.buildprint.api`). It is unofficial and not affiliated with BuildPrint or its author.
 
-See `BUILD_NOTES.txt` for rebuild steps.
+The ready-to-use jar is in `releases/`. See `BUILD_NOTES.txt` for rebuild steps.
 
 ## License
 
