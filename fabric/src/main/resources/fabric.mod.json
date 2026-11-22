@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "shulkerpull",
+  "version": "0.3.1",
+  "name": "Shulker Pull - BuildPrint Addon",
+  "description": "Add-on for BuildPrint. Easy place and the printer build straight from the shulker boxes in your inventory: it moves at most one stack of each needed material (and never more than the build still needs) out of shulker boxes and bundles into your inventory. Items are only moved, never created. Off by default; toggle with the key under Options > Controls > Shulker Pull (default: backslash). The distance it looks at (default 12 blocks) is set in config/shulkerpull.properties. Install on both client and server.",
+  "authors": ["Joel"],
+  "contact": { "sources": "https://github.com/MrJoelPt/shulkerpull" },
+  "license": "MIT",
+  "icon": "assets/shulkerpull/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.shulkerpull.ShulkerPull"],
+    "client": ["dev.shulkerpull.ShulkerPullClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3-",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "buildprint": ">=0.1.17"
+  }
+}

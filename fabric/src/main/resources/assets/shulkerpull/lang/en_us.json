@@ -1,0 +1,8 @@
+{
+  "key.shulkerpull.toggle": "Toggle Shulker Pull",
+  "key.category.shulkerpull.main": "Shulker Pull",
+  "shulkerpull.message.on": "Shulker Pull: ON",
+  "shulkerpull.message.off": "Shulker Pull: OFF",
+  "shulkerpull.hud.on": "Shulker Pull: ON",
+  "shulkerpull.hud.no_server": "Shulker Pull: no server mod"
+}

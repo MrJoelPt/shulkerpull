@@ -19,6 +19,7 @@ import net.minecraft.world.item.component.ItemContainerContents;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
@@ -42,8 +43,6 @@ public final class ShulkerPullClient {
     private static final int CHECK_EVERY_TICKS = 10;
     /** Do not ask for the same item again for this many ticks. */
     private static final int ITEM_COOLDOWN_TICKS = 30;
-    /** Only look at builds within this many blocks of you. */
-    private static final double RANGE = 48.0;
 
     private static final KeyMapping.Category CATEGORY =
             new KeyMapping.Category(Identifier.fromNamespaceAndPath(ShulkerPull.MOD_ID, "main"));
@@ -59,6 +58,7 @@ public final class ShulkerPullClient {
 
     public ShulkerPullClient(IEventBus modBus) {
         buildprintPresent = ModList.get().isLoaded("buildprint");
+        Config.load(FMLPaths.CONFIGDIR.get());
         modBus.addListener(ShulkerPullClient::registerKeys);
         modBus.addListener(ShulkerPullClient::registerHud);
         NeoForge.EVENT_BUS.addListener(ShulkerPullClient::onClientTick);
@@ -122,7 +122,7 @@ public final class ShulkerPullClient {
         Map<String, Integer> needed;
         try {
             String dim = mc.level.dimension().identifier().toString();
-            needed = BuildprintBridge.stillNeeded(dim, player.getX(), player.getY(), player.getZ(), RANGE);
+            needed = BuildprintBridge.stillNeeded(dim, player.getX(), player.getY(), player.getZ(), Config.range());
         } catch (Throwable t) {
             return; // BuildPrint not ready or API changed: do nothing rather than crash.
         }

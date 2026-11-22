@@ -4,7 +4,7 @@ license = "MIT"
 
 [[mods]]
 modId = "shulkerpull"
-version = "0.3.0"
+version = "0.3.1"
 displayName = "Shulker Pull - BuildPrint Addon"
 description = '''
 Add-on for BuildPrint (the schematic / printer mod). It makes easy place and the printer work straight from the shulker boxes in your inventory.
@@ -13,7 +13,7 @@ When BuildPrint still needs a block near you and that block is inside a shulker 
 
 Items are only moved, never created: the server checks the totals after every transfer and undoes it if anything does not add up.
 
-A small badge next to the hotbar shows when it is on. Toggle it with the key under Options > Controls > Shulker Pull (default: backslash). It starts switched off each time you launch the game, so press the key to turn it on.
+A small badge next to the hotbar shows when it is on. Toggle it with the key under Options > Controls > Shulker Pull (default: backslash). It starts switched off each time you launch the game, so press the key to turn it on. The distance it looks at (default 12 blocks) can be changed in config/shulkerpull.properties.
 
 Needs BuildPrint. Install it on both the client and the server; without it on the server it simply does nothing.
 '''

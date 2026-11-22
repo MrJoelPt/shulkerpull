@@ -33,3 +33,8 @@ Rebuild (Windows PowerShell, from this folder, JDK 21+ installed)
   jar --create --file shulkerpull-0.3.0.jar -C out .
   (Dist stub note: if javac says net.neoforged.api.distmarker.Dist is missing, add the neoforge jars from
    libraries\net\neoforged\neoforge\<version> to the classpath.)
+
+Fabric
+  The Fabric port is in fabric/. fabric/stubs holds tiny placeholder versions of the Fabric Loader
+  classes (ModInitializer, ClientModInitializer, FabricLoader) used only to compile without the loader jar;
+  they are not part of the mod. Compile against the Minecraft 26.3 jars and Fabric API 0.166.2+26.3.
